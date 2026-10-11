@@ -1,0 +1,4 @@
+Привет, мир!
+hello
+hello 67
+tak nado
