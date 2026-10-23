@@ -8,7 +8,18 @@ class Vehicle:
 
 class Car(Vehicle):
     def __init__(self, brand, year, fuel):
-        Vehicle.__init__(self, brand, year, fuel)
-        self.brand = brand
-        self.year = year
+        super().__init__(brand, year)
         self.fuel = fuel
+
+    def info(self):
+        parent_info = super().info()
+        return parent_info, self.fuel
+
+class Motorcycle(Vehicle):
+    def __init__(self, brand, year, engine_volume):
+            super().__init__(brand, year)
+            self.engine_volume = engine_volume
+
+    def info(self):
+        parent_info = self.info()
+        return parent_info, self.engine_volume
