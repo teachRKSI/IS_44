@@ -1,0 +1,1 @@
+print("Hello from Elatoncev_V_M")
