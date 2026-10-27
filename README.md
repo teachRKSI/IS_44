@@ -165,7 +165,7 @@ checkbox.setChecked(True)  # можно сразу включить
 checkbox.checkStateChanged.connect(lambda state: print("Состояние:", state))
 ```
 
-В большинстве учебных примеров достаточно проверять `isChecked()` в момент нажатия на кнопку. Подключение к `checkStateChanged` нужно тогда, когда интерфейс должен реагировать **мгновенно**, без промежуточной кнопки.
+В большинстве примеров достаточно проверять `isChecked()` в момент нажатия на кнопку. Подключение к `checkStateChanged` нужно тогда, когда интерфейс должен реагировать **мгновенно**, без промежуточной кнопки.
 
 
 ## Задание
@@ -201,17 +201,4 @@ checkbox.checkStateChanged.connect(lambda state: print("Состояние:", st
   - если ни один не включён — никнейм равен имени.
 - Год можно получить так: `from datetime import datetime; datetime.now().year`.
 
-**1. Создание и текст**
-
-```python
-checkbox = QCheckBox("Добавить год")
-checkbox.setChecked(True)  # можно сразу включить
-```
-Возвращает `True`, если галочка стоит, и `False` — если нет. Это основной способ узнать состояние чекбокса . В отличие от `QLineEdit.text()`, здесь не нужно ничего преобразовывать — уже готовый `bool`.
-
-Если нужно реагировать **сразу при клике** на чекбокс (а не при нажатии на кнопку), подключайтесь к `checkStateChanged`:
-
-```python
-checkbox.checkStateChanged.connect(lambda state: print("Состояние:", state))
-```
 
