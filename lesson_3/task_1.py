@@ -1,6 +1,6 @@
 class Temperature:
     def __init__(self, celsius=0.0):
-        self.celsius = celsius
+        self._celsius = celsius
 
     @property
     def celsius(self):
