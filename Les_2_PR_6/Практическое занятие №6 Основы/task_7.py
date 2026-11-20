@@ -17,8 +17,8 @@ for a, b in zip(names, ages):
 
 print("\n7.4")
 nums = [7, 1, 3, 9]
-print("Числа больше 10: ", any(x > 10 for x in nums)) # True, если хотя бы один > 10
-print("Числа больше 0: ", all(x > 0 for x in nums)) # True, если все > 0
+print("Числа больше 10: ", any(x > 10 for x in nums)) 
+print("Числа больше 0: ", all(x > 0 for x in nums))
 
 
 
