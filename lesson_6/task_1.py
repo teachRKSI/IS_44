@@ -18,7 +18,7 @@ class GreetingCounterWindow(QWidget):
 
         self.count = 0
 
-        main_layout = QVBoxLayout(self)
+        self.main_layout = QVBoxLayout(self)
 
         self.edit = QLineEdit()
         self.edit.setPlaceholderText("Введите ваше имя")
@@ -31,10 +31,10 @@ class GreetingCounterWindow(QWidget):
 
         self.label = QLabel("")
 
-        main_layout.addWidget(self.edit)
-        main_layout.addWidget(self.button)
-        main_layout.addWidget(self.reset_button)
-        main_layout.addWidget(self.label)
+        self.main_layout.addWidget(self.edit)
+        self.main_layout.addWidget(self.button)
+        self.main_layout.addWidget(self.reset_button)
+        self.main_layout.addWidget(self.label)
 
     def on_greet(self):
         name = self.edit.text().strip()
