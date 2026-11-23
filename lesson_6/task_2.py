@@ -18,18 +18,18 @@ class MainWindow(QMainWindow):
         self.setWindowTitle("Анкета")
         self.resize(350, 250)
 
-        central = QWidget()
-        self.setCentralWidget(central)
+        self.central = QWidget()
+        self.setCentralWidget(self.central)
 
-        form_layout = QFormLayout()
+        self.form_layout = QFormLayout()
 
         self.name_edit = QLineEdit()
         self.age_edit = QLineEdit()
         self.city_edit = QLineEdit()
 
-        form_layout.addRow("Имя:", self.name_edit)
-        form_layout.addRow("Возраст:", self.age_edit)
-        form_layout.addRow("Город:", self.city_edit)
+        self.form_layout.addRow("Имя:", self.name_edit)
+        self.form_layout.addRow("Возраст:", self.age_edit)
+        self.form_layout.addRow("Город:", self.city_edit)
 
         self.button = QPushButton("Показать")
         self.button.clicked.connect(self.on_show)
@@ -37,20 +37,20 @@ class MainWindow(QMainWindow):
         self.result_label = QLabel("")
         self.result_label.setWordWrap(True)
 
-        main_layout = QVBoxLayout(central)
-        main_layout.addLayout(form_layout)
-        main_layout.addWidget(self.button)
-        main_layout.addWidget(self.result_label)
+        self.main_layout = QVBoxLayout(self.central)
+        self.main_layout.addLayout(self.form_layout)
+        self.main_layout.addWidget(self.button)
+        self.main_layout.addWidget(self.result_label)
 
     def on_show(self):
-        name = self.name_edit.text().strip()
-        age = self.age_edit.text().strip()
-        city = self.city_edit.text().strip()
+        self.name = self.name_edit.text().strip()
+        self.age = self.age_edit.text().strip()
+        self.city = self.city_edit.text().strip()
 
-        if not name or not age or not city:
+        if not self.name or not self.age or not self.city:
             self.result_label.setText("Заполните все поля")
         else:
-            self.result_label.setText(f"Имя: {name}\nВозраст: {age}\nГород: {city}")
+            self.result_label.setText(f"Имя: {self.name}\nВозраст: {self.age}\nГород: {self.city}")
 
 
 if __name__ == "__main__":
